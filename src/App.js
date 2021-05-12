@@ -29,19 +29,34 @@ function App() {
             defaultValue={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          {userProf.students.map((prof) => (
-            <div key={prof.id}>
-              <Profiles
-                fName={prof.firstName}
-                lName={prof.lastName}
-                Email={prof.email}
-                Company={prof.company}
-                Skill={prof.skill}
-                Img={prof.pic}
-                Score={prof.grades}
-              />
-            </div>
-          ))}
+          {userProf.students
+            .filter((profile) => {
+              if (searchTerm === "" || searchTerm == null) {
+                return profile;
+              } else if (
+                profile.firstName
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase()) ||
+                profile.lastName
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase())
+              ) {
+                return profile;
+              }
+            })
+            .map((prof) => (
+              <div key={prof.id}>
+                <Profiles
+                  fName={prof.firstName}
+                  lName={prof.lastName}
+                  Email={prof.email}
+                  Company={prof.company}
+                  Skill={prof.skill}
+                  Img={prof.pic}
+                  Score={prof.grades}
+                />
+              </div>
+            ))}
         </div>
       )}
     </div>
