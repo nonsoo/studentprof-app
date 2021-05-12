@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Profiles = ({ fName, lName, Email, Company, Skill, Average, Img }) => {
+const Profiles = ({
+  fName,
+  lName,
+  Email,
+  Company,
+  Skill,
+  Average,
+  Img,
+  Score,
+}) => {
+  const [toggleState, setToggleState] = useState(false);
+
+  const onToggle = () => {
+    setToggleState(!toggleState);
+  };
   return (
     <div className="Profiles">
       <img src={`${Img}`} alt="" className="Profiles__Img" />
-      {/* <div className="Profiles__Img"></div> */}
       <div className="Profiles__TextCon">
         <p className="Profiles__Title">
           {fName} {lName}
@@ -13,7 +26,17 @@ const Profiles = ({ fName, lName, Email, Company, Skill, Average, Img }) => {
         <p className="Profiles__Company subText">Company: {Company}</p>
         <p className="Profiles__Company subText">Skill: {Skill}</p>
         <p className="Profiles__Average subText">Average: {Average}</p>
+        <div className={`testScoreCon ${toggleState && "showCon"}`}>
+          {Score.map((grade, index) => (
+            <p key={index} className="testScore">
+              Test {index + 1}: {grade}%
+            </p>
+          ))}
+        </div>
       </div>
+      <button className="Profiles__Btn" onClick={() => onToggle()}>
+        {!toggleState ? "+" : "X"}
+      </button>
     </div>
   );
 };

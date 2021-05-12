@@ -35,6 +35,7 @@ function App() {
                 Company={prof.company}
                 Skill={prof.skill}
                 Img={prof.pic}
+                Score={prof.grades}
               />
             </div>
           ))}
