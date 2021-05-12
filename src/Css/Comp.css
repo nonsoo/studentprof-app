@@ -1,0 +1,30 @@
+.Profiles {
+  width: 100%;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+
+  padding: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.Profiles__Img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.Profiles__TextCon {
+  margin-top: 2.5rem;
+}
+
+.Profiles__Title {
+  font-size: var(--headingFontSize);
+  font-weight: var(--fw-tri);
+}
+
+.subText {
+  margin-left: 1.5rem;
+  margin-top: 0.25rem;
+}

@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Setting up css custom variables */
+
+  --ff-prmy: "Raleway";
+
+  /* Font Sizes */
+  --titleFontSize: 3rem;
+  --headingFontSize: 2.5rem;
+  --subHeadingFontSize: 2rem;
+  --bodyFontSize: 1.25rem;
+  --smallBodyFontSize: 1rem;
+
+  /* Font Weights */
+  --fw-pri: 100;
+  --fw-sec: 400;
+  --fw-tri: 700;
+
+  --col-pri: #ffffff;
+  --col-sec: #000000;
+
+  --boxShadow-prmy: 0 3px 6px 1px rgba(23, 23, 23, 0.06);
+}
+
+.studentProf--appC {
+  /* Setting up defualt values for overall App */
+  font-family: var(--ff-prmy);
+  font-size: var(--bodyFontSize);
+  font-weight: var(--fw-sec);
+
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.ProfilesContainer {
+  padding: 2rem;
+  /* border: 1px solid red; */
+  border-radius: 10px;
+  box-shadow: var(--boxShadow-prmy);
+}
+
+.SearchField {
+  width: 100%;
+  height: 10vh;
+
+  font-size: var(--subHeadingFontSize);
+  font-family: var(--ff-prmy);
+  font-weight: var(--fw-sec);
+
+  border: none;
+  border-bottom: 1px solid black;
+}
