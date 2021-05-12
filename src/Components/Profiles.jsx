@@ -20,7 +20,7 @@ const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
   };
   return (
     <div className="Profiles">
-      <img src={`${Img}`} alt="" className="Profiles__Img" />
+      <img src={`${Img}`} alt="Profile Pic" className="Profiles__Img" />
       <div className="Profiles__TextCon">
         <p className="Profiles__Title">
           {fName} {lName}
