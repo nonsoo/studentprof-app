@@ -49,6 +49,7 @@
 .SearchField {
   width: 100%;
   height: 10vh;
+  padding: 1.25rem 1.5rem;
 
   font-size: var(--subHeadingFontSize);
   font-family: var(--ff-prmy);

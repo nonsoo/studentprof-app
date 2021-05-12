@@ -8,6 +8,7 @@ import Profiles from "./Components/Profiles";
 
 function App() {
   const [userProf, setUserProf] = useState();
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     axios.get(`https://api.hatchways.io/assessment/students`).then((res) => {
@@ -25,6 +26,8 @@ function App() {
             type="text"
             className="SearchField"
             placeholder="Search By Name"
+            defaultValue={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           {userProf.students.map((prof) => (
             <div key={prof.id}>

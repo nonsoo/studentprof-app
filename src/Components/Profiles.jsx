@@ -12,6 +12,17 @@ const Profiles = ({
 }) => {
   const [toggleState, setToggleState] = useState(false);
 
+  // const computeAvg = () => {
+  //   let average = 0;
+  //   let Total = 0;
+
+  //   Score.forEach((grade) => {
+  //     Total = Total + grade;
+  //   });
+
+  //   average = Total / Score.length();
+  // };
+
   const onToggle = () => {
     setToggleState(!toggleState);
   };
@@ -48,5 +59,4 @@ Profiles.defaultProps = {
   lName: "Doe",
   Email: "Sample@sample.com",
   Company: "Sample Company",
-  Average: "100%",
 };
