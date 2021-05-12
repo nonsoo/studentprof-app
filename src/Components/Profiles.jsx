@@ -1,27 +1,19 @@
 import React, { useState } from "react";
 
-const Profiles = ({
-  fName,
-  lName,
-  Email,
-  Company,
-  Skill,
-  Average,
-  Img,
-  Score,
-}) => {
+const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
   const [toggleState, setToggleState] = useState(false);
 
-  // const computeAvg = () => {
-  //   let average = 0;
-  //   let Total = 0;
+  const computeAvg = () => {
+    let average = 0;
+    let Total = 0;
 
-  //   Score.forEach((grade) => {
-  //     Total = Total + grade;
-  //   });
+    Score.forEach((grade) => {
+      Total = Total + parseInt(grade);
+    });
 
-  //   average = Total / Score.length();
-  // };
+    average = Total / Score.length;
+    return average;
+  };
 
   const onToggle = () => {
     setToggleState(!toggleState);
@@ -36,7 +28,7 @@ const Profiles = ({
         <p className="Profiles__Email subText">Email: {Email}</p>
         <p className="Profiles__Company subText">Company: {Company}</p>
         <p className="Profiles__Company subText">Skill: {Skill}</p>
-        <p className="Profiles__Average subText">Average: {Average}</p>
+        <p className="Profiles__Average subText">Average: {computeAvg()}%</p>
         <div className={`testScoreCon ${toggleState && "showCon"}`}>
           {Score.map((grade, index) => (
             <p key={index} className="testScore">
