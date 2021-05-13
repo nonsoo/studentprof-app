@@ -56,6 +56,38 @@
   display: block;
 }
 
+.Profiles__TagCon {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.Profiles__Tag {
+  padding: 0.55rem 0.75rem;
+  background-color: #e8e8e8;
+  border-radius: 5px;
+}
+
+.Profiles__TagAddCon {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.Profiles__TagInput {
+  width: 50%;
+  height: 5vh;
+  font-size: var(--bodyFontSize);
+  font-family: var(--ff-prmy);
+  font-weight: var(--fw-sec);
+
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.Profiles__TagBtn {
+  padding: 0.75rem 2rem;
+}
+
 @media screen and (max-width: 800px) {
   .Profiles {
     flex-direction: column;

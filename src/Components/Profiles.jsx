@@ -2,6 +2,13 @@ import React, { useState } from "react";
 
 const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
   const [toggleState, setToggleState] = useState(false);
+  const [tag, setTag] = useState([]);
+  const [newTag, setNewTag] = useState("");
+
+  const onAddTag = () => {
+    setTag([...tag, newTag]);
+    setNewTag("");
+  };
 
   const computeAvg = () => {
     let average = 0;
@@ -36,6 +43,24 @@ const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
                 Test {index + 1}: {grade}%
               </p>
             ))}
+          </div>
+          <div className="Profiles__TagCon">
+            {tag.map((indiviTag) => (
+              <p className="Profiles__Tag">{indiviTag}</p>
+            ))}
+          </div>
+
+          <div className="Profiles__TagAddCon">
+            <input
+              type="text"
+              className="Profiles__TagInput"
+              value={newTag}
+              onChange={(e) => setNewTag(e.target.value)}
+              placeholder="Add a Tag"
+            />
+            <button className="Profiles__TagBtn" onClick={onAddTag}>
+              Add new Tag
+            </button>
           </div>
         </div>
       </div>
