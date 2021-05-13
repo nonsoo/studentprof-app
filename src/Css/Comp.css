@@ -3,9 +3,14 @@
   display: flex;
   gap: 1.25rem;
   align-items: center;
+  justify-content: space-between;
 
   padding: 2rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.Profile__PicTextCon {
+  display: flex;
 }
 
 .Profiles__Img {
@@ -14,7 +19,6 @@
   border-radius: 50%;
 
   align-self: flex-start;
-  /* background-color: green; */
 }
 
 .Profiles__TextCon {
@@ -25,6 +29,7 @@
   padding: 1rem 3rem;
   font-size: var(--bodyFontSize);
   align-self: flex-start;
+  justify-self: end;
   float: right;
 }
 

@@ -20,25 +20,28 @@ const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
   };
   return (
     <div className="Profiles">
-      <img src={`${Img}`} alt="Profile Pic" className="Profiles__Img" />
-      <div className="Profiles__TextCon">
-        <p className="Profiles__Title">
-          {fName} {lName}
-        </p>
-        <p className="Profiles__Email subText">Email: {Email}</p>
-        <p className="Profiles__Company subText">Company: {Company}</p>
-        <p className="Profiles__Company subText">Skill: {Skill}</p>
-        <p className="Profiles__Average subText">Average: {computeAvg()}%</p>
-        <div className={`testScoreCon ${toggleState && "showCon"}`}>
-          {Score.map((grade, index) => (
-            <p key={index} className="testScore">
-              Test {index + 1}: {grade}%
-            </p>
-          ))}
+      <div className="Profile__PicTextCon">
+        <img src={`${Img}`} alt="Profile Pic" className="Profiles__Img" />
+        <div className="Profiles__TextCon">
+          <p className="Profiles__Title">
+            {fName} {lName}
+          </p>
+          <p className="Profiles__Email subText">Email: {Email}</p>
+          <p className="Profiles__Company subText">Company: {Company}</p>
+          <p className="Profiles__Company subText">Skill: {Skill}</p>
+          <p className="Profiles__Average subText">Average: {computeAvg()}%</p>
+          <div className={`testScoreCon ${toggleState && "showCon"}`}>
+            {Score.map((grade, index) => (
+              <p key={index} className="testScore">
+                Test {index + 1}: {grade}%
+              </p>
+            ))}
+          </div>
         </div>
       </div>
+
       <button className="Profiles__Btn" onClick={() => onToggle()}>
-        {!toggleState ? "+" : "X"}
+        {!toggleState ? "+" : "-"}
       </button>
     </div>
   );
