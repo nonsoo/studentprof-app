@@ -25,6 +25,11 @@
   margin-top: 2.5rem;
 }
 
+.Profiles__TextCon > *,
+.testScoreCon > * {
+  margin-bottom: 0.75rem;
+}
+
 .Profiles__Btn {
   padding: 1rem 3rem;
   font-size: var(--bodyFontSize);
@@ -57,6 +62,7 @@
   }
   .Profile__PicTextCon {
     flex-direction: column;
+    padding: 0.75rem;
   }
 
   .Profiles__Title {
