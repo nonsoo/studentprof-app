@@ -9,6 +9,7 @@ import Profiles from "./Components/Profiles";
 function App() {
   const [userProf, setUserProf] = useState();
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchTag, setSearchTag] = useState("");
 
   useEffect(() => {
     axios.get(`https://api.hatchways.io/assessment/students`).then((res) => {
@@ -27,6 +28,13 @@ function App() {
             placeholder="Search By Name"
             defaultValue={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <input
+            type="text"
+            className="SearchField"
+            placeholder="Search By Tag"
+            defaultValue={searchTag}
+            onChange={(e) => setSearchTag(e.target.value)}
           />
           {userProf.students
             .filter((profile) => {
