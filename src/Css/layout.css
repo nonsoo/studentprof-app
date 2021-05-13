@@ -46,6 +46,9 @@
   width: 60%;
   max-width: 1600px;
   margin: 0 auto;
+  height: 90vh;
+
+  overflow: scroll;
 }
 
 .SearchField {
