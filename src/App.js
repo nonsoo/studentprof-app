@@ -40,7 +40,7 @@ function App() {
           />
           {userProf.students
             .filter((profile) => {
-              if (searchTerm === "" || searchTag === "") {
+              if (searchTerm === "") {
                 return profile;
               } else if (
                 profile.firstName
