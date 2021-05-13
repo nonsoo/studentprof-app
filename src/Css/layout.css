@@ -30,7 +30,7 @@
 }
 
 .studentProf--appC {
-  /* Setting up defualt values for overall App */
+  /* Setting up default values for overall App */
   font-family: var(--ff-prmy);
   font-size: var(--bodyFontSize);
   font-weight: var(--fw-sec);
@@ -41,9 +41,12 @@
 
 .ProfilesContainer {
   padding: 2rem;
-  /* border: 1px solid red; */
   border-radius: 10px;
   box-shadow: var(--boxShadow-prmy);
+
+  width: 60%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .SearchField {

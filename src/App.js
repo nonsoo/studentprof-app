@@ -17,7 +17,6 @@ function App() {
     });
   }, []);
 
-  console.log(userProf);
   return (
     <div className="studentProf--appC">
       {userProf && (
