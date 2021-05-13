@@ -16,7 +16,6 @@
   --headingFontSize: 2.5rem;
   --subHeadingFontSize: 2rem;
   --bodyFontSize: 1.25rem;
-  --smallBodyFontSize: 1rem;
 
   /* Font Weights */
   --fw-pri: 100;
@@ -60,4 +59,13 @@
 
   border: none;
   border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 800px) {
+  :root {
+    --titleFontSize: 2.5rem;
+    --headingFontSize: 2rem;
+    --subHeadingFontSize: 1.5rem;
+    --bodyFontSize: 1rem;
+  }
 }

@@ -29,8 +29,6 @@
   padding: 1rem 3rem;
   font-size: var(--bodyFontSize);
   align-self: flex-start;
-  justify-self: end;
-  float: right;
 }
 
 .Profiles__Title {
@@ -51,4 +49,22 @@
 
 .showCon {
   display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .Profiles {
+    flex-direction: column;
+  }
+  .Profile__PicTextCon {
+    flex-direction: column;
+  }
+
+  .Profiles__Title {
+    text-align: center;
+  }
+
+  .Profiles__Img,
+  .Profiles__Btn {
+    align-self: center;
+  }
 }
