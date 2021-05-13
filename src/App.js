@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 import "./Css/layout.css";
@@ -10,6 +11,8 @@ function App() {
   const [userProf, setUserProf] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTag, setSearchTag] = useState("");
+  const displayTag = useSelector((state) => state.tag.tags);
+  console.log(displayTag);
 
   useEffect(() => {
     axios.get(`https://api.hatchways.io/assessment/students`).then((res) => {
@@ -66,6 +69,7 @@ function App() {
             ))}
         </div>
       )}
+      <p>the lst of tags are {displayTag}</p>
     </div>
   );
 }

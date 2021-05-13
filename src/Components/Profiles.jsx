@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { addTag } from "../Redux/ducks/tag";
 const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
   const [toggleState, setToggleState] = useState(false);
   const [tag, setTag] = useState([]);
   const [newTag, setNewTag] = useState("");
+  const dispatch = useDispatch();
 
   const onAddTag = () => {
     setTag([...tag, newTag]);
     setNewTag("");
+    dispatch(addTag([newTag]));
   };
 
   const computeAvg = () => {
@@ -46,7 +49,12 @@ const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
           </div>
           <div className="Profiles__TagCon">
             {tag.map((indiviTag) => (
-              <p className="Profiles__Tag">{indiviTag}</p>
+              <p
+                key={Math.floor(Math.random() * 10000)}
+                className="Profiles__Tag"
+              >
+                {indiviTag}
+              </p>
             ))}
           </div>
 
