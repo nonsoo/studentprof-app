@@ -11,8 +11,7 @@ function App() {
   const [userProf, setUserProf] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchTag, setSearchTag] = useState("");
-  const displayTag = useSelector((state) => state.tag.tags);
-  console.log(displayTag);
+  // const displayTag = useSelector((state) => state.tag.tags);
 
   useEffect(() => {
     axios.get(`https://api.hatchways.io/assessment/students`).then((res) => {
@@ -41,7 +40,7 @@ function App() {
           />
           {userProf.students
             .filter((profile) => {
-              if (searchTerm === "" || searchTerm == null) {
+              if (searchTerm === "" || searchTag === "") {
                 return profile;
               } else if (
                 profile.firstName
@@ -69,7 +68,6 @@ function App() {
             ))}
         </div>
       )}
-      <p>the lst of tags are {displayTag}</p>
     </div>
   );
 }

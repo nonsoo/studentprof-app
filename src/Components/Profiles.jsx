@@ -8,6 +8,10 @@ const Profiles = ({ fName, lName, Email, Company, Skill, Img, Score }) => {
   const dispatch = useDispatch();
 
   const onAddTag = () => {
+    if (newTag === "") {
+      alert("please enter a Tag");
+      return;
+    }
     setTag([...tag, newTag]);
     setNewTag("");
     dispatch(addTag([newTag]));
